@@ -1,0 +1,11 @@
+{
+  "name": "reda_golf_scoring_system",
+  "version": "1.0.0",
+  "description": "This application is meant to take in a golfer's scorecard and apply the Callaway Handicapping System in an effort to track the scores of multiple golfers over multiple rounds.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Reda",
+  "license": "ISC"
+}
