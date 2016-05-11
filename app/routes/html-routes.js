@@ -29,7 +29,7 @@ module.exports = function(app) {
 		res.sendFile(path.join(__dirname + '/../public/round3.html'))
 	});
 
-	app.get('/leaderboard', function (req.res){
+	app.get('/leaderboard', function (req,res){
 		res.sendFile(path.join(__dirname + '/../public/leaderboard.html'))
 	});
 }
