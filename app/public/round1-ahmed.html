@@ -34,26 +34,16 @@
 							<th> Hole</th>
 							<th> Par</th>
 							<th> Score</th>
+							<style>
+							th{
+								padding: 10px;
+							}
+							td{
+								padding: 10px;
+							}
+							</style>
 						</tr>
-						<tr>
-							<td><strong>1</strong></td>
-							<td>4</td>
-							<td>
-								<select id="hole1">
-								  	<option value="0" selected="selected">SCORE</option>
-									<option value="1">1</option>
-				  					<option value="2">2</option>
-				  					<option value="3">3</option>
-				  					<option value="4">4</option>
-				  					<option value="5">5</option>
-				  					<option value="5">6</option>
-				  					<option value="5">7</option>
-				  					<option value="5">8</option>
-				  					<option value="5">9</option>
-				  					<option value="5">10</option>
-								</select>
-							</td>
-						</tr>
+						
 					</tbody>
 				</table>
 			</div>
@@ -159,15 +149,12 @@ var cardHoles = [
 $(".generate").on("click",function(){
 	var selectBox = $('')
 	for (var i = 0; i < cardHoles.length; i++) {
-		$('.scoreTable > tbody:last-child').append('<tr><td><strong>' + cardHoles[i].holeNumber + '</td><td>' + cardHoles[i].parNumber + '</td>' 
-			+ '<td><select><option value=0 selected="selected">SCORE</option><option value ="' +  selectOptions.options.length + '">'+ selectOptions.options[i] + '</option>	</select></td>');
+		$('.scoreTable > tbody:last-child').append('<tr><td><strong>' + cardHoles[i].holeNumber + '</td><td><strong><i>' + cardHoles[i].parNumber + '</td>' 
+			+ '<td><select><option value=0 selected="selected">SCORE</option><option value = 1>1</option><option value = 2>2</option><option value = 3>3</option><option value = 4>4</option><option value = 5>5</option><option value = 6>6</option><option value = 7>7</option><option value = 8>8</option><option value = 9>9</option><option value = 10>10</option></select></td>');
 
 	};
 	
 })
 
-// // $('#scoreCard').append('<table></table>');
-// // var scoreCard = $('#scoreCard').children();
-// // scoreCard.append("<tr><td>a</td><td>b</td></tr>")
 
 </script>
