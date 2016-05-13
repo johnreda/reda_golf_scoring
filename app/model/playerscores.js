@@ -4,22 +4,39 @@
 
 // Dependency
 
-// This may be confusing but here Sequelize (capital) references the standard library
+// require the sequelize npm app
 var Sequelize = require("sequelize"); 
-// sequelize (lowercase) references my connection to the DB. You could name it something else, but I was just following their convention.
+
+// require the connection to the db
 var sequelize = require("../config/connection.js"); 
 
-var sequelize = new Sequelize('redagolfscoring', 'root', '', {
-    host: "localhost",
-    port: 3306,
-    dialect: 'mysql'
+// "classes" model that matches up with DB
+var playerScores = sequelize.define("playerSCores", {
+	id: {
+		type: Sequelize.INTEGER,
+		autoIncrement: true,
+		primaryKey: true
+	},
+	name: {
+		type: Sequelize.STRING
+	},
+	holeScores: {
+		type: Sequelize.INTEGER
+	},
+	grossScore: {
+		type: Sequelize.INTEGER
+	},
+	netScore: {
+		type: Sequelize.INTEGER
+	}
 });
 
-sequelize.authenticate().complete(function (err) {
- if (err) {
-    console.log('There is connection in ERROR');
- } else {
-    console.log('Connection has been established successfully');
- }
+// Syncs with DB
+playerScores.sync({}).then(function () {
+  // Table created
+  console.log('classes table done syncing')
 });
+
+// Makes the classes Model available for other files (will also create a table)
+module.exports = playerScores;
 

@@ -25,7 +25,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-5"></div>
+			<div class="col-md-4"></div>
 			<div class="col-md-4">
 			<div class="table-bordered">
 				<table class="scoreTable">
@@ -185,90 +185,15 @@ $(".generate").on("click",function(){
 	var grossArray= [];
 
 
+			//========================================================================================		
+					for (var i = 1; i < 19; i++) {
+							var scoreID = "hole" + i;
+							var holeScore = parseInt($("#" + scoreID + " option:selected").val());
+							grossArray.push(holeScore);
+							
+
+						};
 			//========================================================================================
-				//COME BACK TO THIS BECASUE IT COULD BE MUCH BETTER THAN THE WAY THAT I'VE DONE IT
-					// for (var i = 1; i < 19; i++) {
-					// 		var scoreID = "hole" + i;
-					// 			//console.log(scoreID);
-					// 		var holeScore = parseInt($("#" + scoreID + " option:selected").val());
-					// 			console.log("HOLE SCORE: " + holeScore[i])
-					// 		// grossArray.push(hole[i]score);
-					// 		// console.log("Scores: " + hole[i]scores);
-
-					// 	};
-			//========================================================================================
-
-	var hole1score = parseInt($("#hole1 option:selected").val());
-		console.log("HOLE 1 SCORE : " + hole1score);
-		grossArray.push(hole1score);
-
-	var hole2score = parseInt($( "#hole2 option:selected" ).val());
-		console.log("HOLE 2 SCORE : " + hole2score);
-		grossArray.push(hole2score);
-
-	var hole3score = parseInt($( "#hole3 option:selected" ).val());
-		console.log("HOLE 3 SCORE : " + hole3score);
-		grossArray.push(hole3score);
-
-	var hole4score = parseInt($( "#hole4 option:selected" ).val());
-		console.log("HOLE 4 SCORE : " + hole4score);
-		grossArray.push(hole4score);
-
-	var hole5score = parseInt($( "#hole5 option:selected" ).val());
-		console.log("HOLE 5 SCORE : " + hole5score);
-		grossArray.push(hole5score);
-
-	var hole6score = parseInt($( "#hole6 option:selected" ).val());
-		console.log("HOLE 6 SCORE : " + hole6score);
-		grossArray.push(hole6score);
-
-	var hole7score = parseInt($( "#hole7 option:selected" ).val());
-		console.log("HOLE 7 SCORE : " + hole7score);
-		grossArray.push(hole7score);
-
-	var hole8score = parseInt($( "#hole8 option:selected" ).val());
-		console.log("HOLE 8 SCORE : " + hole8score);
-		grossArray.push(hole8score);
-
-	var hole9score = parseInt($( "#hole9 option:selected" ).val());
-		console.log("HOLE 9 SCORE : " + hole9score);
-		grossArray.push(hole9score);
-
-	var hole10score = parseInt($( "#hole10 option:selected" ).val());
-		console.log("HOLE 10 SCORE : " + hole10score);
-		grossArray.push(hole10score);
-
-	var hole11score = parseInt($( "#hole11 option:selected" ).val());
-		console.log("HOLE 11 SCORE : " + hole11score);
-		grossArray.push(hole11score);
-
-	var hole12score = parseInt($( "#hole12 option:selected" ).val());
-		console.log("HOLE 12 SCORE : " + hole12score);
-		grossArray.push(hole12score);
-
-	var hole13score = parseInt($( "#hole13 option:selected" ).val());
-		console.log("HOLE 13 SCORE : " + hole13score);
-		grossArray.push(hole13score);
-
-	var hole14score = parseInt($( "#hole14 option:selected" ).val());
-		console.log("HOLE 14 SCORE : " + hole14score);
-		grossArray.push(hole14score);
-
-	var hole15score = parseInt($( "#hole15 option:selected" ).val());
-		console.log("HOLE 15 SCORE : " + hole15score);
-		grossArray.push(hole15score);
-
-	var hole16score = parseInt($( "#hole16 option:selected" ).val());
-		console.log("HOLE 16 SCORE : " + hole16score);
-		grossArray.push(hole16score);
-
-	var hole17score = parseInt($( "#hole17 option:selected" ).val());
-		console.log("HOLE 17 SCORE : " + hole17score);
-		grossArray.push(hole17score);
-
-	var hole18score = parseInt($( "#hole18 option:selected" ).val());
-		console.log("HOLE 18 SCORE : " + hole18score);
-		grossArray.push(hole18score);
 
 
 var grossTotal=0;

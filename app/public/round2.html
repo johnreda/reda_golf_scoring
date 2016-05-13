@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Round 2 Scorecard</title>
+
+			<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="jumbotron">
+		<h1 class="text-center">
+			The Links at Lighthouse Sound
+		</h1>
+
+			<h3 class="text-center">
+				Round 2 Scorecard
+				<br><br>
+				<button type="button" class="btn btn-default generate">See Scorecard</button>
+			</h3>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5"></div>
+			<div class="col-md-4">
+			<div class="table-bordered">
+				<table class="scoreTable">
+					<tbody>
+						<tr>
+							<th> Hole</th>
+							<th> Par</th>
+							<th> Score</th>
+							<style>
+							th{
+								padding: 10px;
+							}
+							td{
+								padding: 10px;
+							}
+							</style>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			</div>
+		</div>
+	</div>
+	<br><br>
+
+			<div class="row">
+			<div class="col-md-5"></div>
+			<div class="col-md-3">
+				<button type="button" class="btn btn-default submit">Submit Scorecard</button>
+			</div>
+			</div>
+<br><br><br>
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+//
+
+//DYNAMICALLY CREATE SCORECARD
+
+var selectOptions = $('<select>');
+	for (var i = 1; i < 19; i++) {
+		var holeID = selectOptions.id = "hole" + [i];
+		//console.log("Hole ID: " + holeID);
+	};
+
+var cardHoles = [
+	{
+		holeNumber: 1, 
+		parNumber: 4,
+		selectID: "hole1"
+	},
+	{
+		holeNumber: 2,
+		parNumber: 5,
+		selectID: "hole2"
+	},
+	{
+		holeNumber: 3,
+		parNumber: 3,
+		selectID: "hole3"
+	},
+	{
+		holeNumber: 4,
+		parNumber: 4,
+		selectID: "hole4"
+	},
+	{
+		holeNumber: 5,
+		parNumber: 3,
+		selectID: "hole5"
+	},
+	{
+		holeNumber: 6,
+		parNumber: 4,
+		selectID: "hole6"
+	},
+	{
+		holeNumber: 7,
+		parNumber: 5,
+		selectID: "hole7"
+	},
+	{
+		holeNumber: 8,
+		parNumber: 4,
+		selectID: "hole8"
+	},
+	{
+		holeNumber: 9,
+		parNumber: 4,
+		selectID: "hole9"
+	},
+	{
+		holeNumber: 10,
+		parNumber: 4,
+		selectID: "hole10"
+	},
+	{
+		holeNumber: 11,
+		parNumber: 3,
+		selectID: "hole11"
+	},
+	{
+		holeNumber: 12,
+		parNumber: 5,
+		selectID: "hole12"
+	},
+	{
+		holeNumber: 13,
+		parNumber: 3,
+		selectID: "hole13"
+	},
+	{
+		holeNumber: 14,
+		parNumber: 4,
+		selectID: "hole14"
+	},
+	{
+		holeNumber: 15,
+		parNumber: 4,
+		selectID: "hole15"
+	},
+	{
+		holeNumber: 16,
+		parNumber: 4,
+		selectID: "hole16"
+	},
+	{
+		holeNumber: 17,
+		parNumber: 4,
+		selectID: "hole17"
+	},
+	{
+		holeNumber: 18,
+		parNumber: 5,
+		selectID: "hole18"
+	}
+]
+
+$(".generate").on("click",function(){
+	// var selectBox = $('')
+
+	for (var i = 0; i < cardHoles.length; i++) {
+		
+		$('.scoreTable > tbody:last-child').append('<tr><td><strong>' + cardHoles[i].holeNumber + '</td><td><strong><i>' + cardHoles[i].parNumber + '</td>' 
+			+ '<td><select id="' + cardHoles[i].selectID + '"><option value=0 selected="selected">SCORE</option><option value = 1>1</option><option value = 2>2</option><option value = 3>3</option><option value = 4>4</option><option value = 5>5</option><option value = 6>6</option><option value = 7>7</option><option value = 8>8</option><option value = 9>9</option><option value = 10>10</option></select></td>');
+	};
+	
+
+});
+
+	$(".generate").on("click",function(){
+	// var selectBox = $('')
+
+	for (var i = 0; i < cardHoles.length; i++) {
+		
+		$('.scoreTable > tbody:last-child').append('<tr><td><strong>' + cardHoles[i].holeNumber + '</td><td><strong><i>' + cardHoles[i].parNumber + '</td>' 
+			+ '<td><select id="' + cardHoles[i].selectID + '"><option value=0 selected="selected">SCORE</option><option value = 1>1</option><option value = 2>2</option><option value = 3>3</option><option value = 4>4</option><option value = 5>5</option><option value = 6>6</option><option value = 7>7</option><option value = 8>8</option><option value = 9>9</option><option value = 10>10</option></select></td>');
+	};
+	
+
+});
+
+	$(".submit").on("click", function (){
+	
+	var grossArray= [];
+
+
+			//========================================================================================		
+					for (var i = 1; i < 19; i++) {
+							var scoreID = "hole" + i;
+							var holeScore = parseInt($("#" + scoreID + " option:selected").val());
+							grossArray.push(holeScore);
+							
+
+						};
+			//========================================================================================
+
+
+var grossTotal=0;
+for(var i in grossArray) { grossTotal += grossArray[i]; }
+	alert("Your Gross Score is: " + grossTotal);
+
+
+});
+
+
+
+
+
+</script>

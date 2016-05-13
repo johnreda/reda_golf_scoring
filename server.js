@@ -6,7 +6,7 @@ var express = require ('express');
 var bodyParser = require ('body-parser');
 var connection = require ('./app/config/connection.js');
 var mysql = require('mysql');
-var playerScores = require('./model/playerscores.js') ;
+// var playerScores = require('./model/playerscores.js') ;
 // sequelize (lowercase) references my connection to the DB. You could name it something else, but I was just following their convention.
 
 
