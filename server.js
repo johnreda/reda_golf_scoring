@@ -4,6 +4,9 @@
 
 var express = require ('express');
 var bodyParser = require ('body-parser');
+var connection = require ('./app/config/connection.js');
+var mysql = require('mysql');
+
 
 
 // SET UP EXPRESS APP

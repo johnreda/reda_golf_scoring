@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Round 1 Scorecard</title>
+
+			<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="jumbotron">
+		<h1 class="text-center">
+			Eagle's Landing
+		</h1>
+
+			<h3 class="text-center">
+				Round 1 Scorecard
+				<br>
+				<button type="button" class="btn btn-default generate">See Scorecard</button>
+			</h3>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3"></div>
+			<div class="col-md-4">
+			<div class="table-striped">
+				<table class="scoreTable">
+					<tbody>
+						<tr>
+							<th> Hole</th>
+							<th> Par</th>
+							<th> Score</th>
+						</tr>
+						<tr>
+							<td><strong>1</strong></td>
+							<td>4</td>
+							<td>
+								<select id="hole1">
+								  	<option value="0" selected="selected">SCORE</option>
+									<option value="1">1</option>
+				  					<option value="2">2</option>
+				  					<option value="3">3</option>
+				  					<option value="4">4</option>
+				  					<option value="5">5</option>
+				  					<option value="5">6</option>
+				  					<option value="5">7</option>
+				  					<option value="5">8</option>
+				  					<option value="5">9</option>
+				  					<option value="5">10</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+//
+
+//DYNAMICALLY CREATE SCORECARD
+
+var selectOptions = $('<select>');
+	for (var i = 1; i < 19; i++) {
+		selectOptions.id = "hole" + [i];
+		console.log("Hole ID: " + selectOptions.id);
+		selectOptions.options = [0,1,2,3,4,5,6,7,8,9,10];
+	};
+
+var cardHoles = [
+	{
+		holeNumber: 1, 
+		parNumber: 4
+	},
+	{
+		holeNumber: 2,
+		parNumber: 4
+	},
+	{
+		holeNumber: 3,
+		parNumber: 5
+	},
+	{
+		holeNumber: 4,
+		parNumber: 4
+	},
+	{
+		holeNumber: 5,
+		parNumber: 3
+	},
+	{
+		holeNumber: 6,
+		parNumber: 4
+	},
+	{
+		holeNumber: 7,
+		parNumber: 5
+	},
+	{
+		holeNumber: 8,
+		parNumber: 3
+	},
+	{
+		holeNumber: 9,
+		parNumber: 4
+	},
+	{
+		holeNumber: 10,
+		parNumber: 4
+	},
+	{
+		holeNumber: 11,
+		parNumber: 5
+	},
+	{
+		holeNumber: 12,
+		parNumber: 3
+	},
+	{
+		holeNumber: 13,
+		parNumber: 5
+	},
+	{
+		holeNumber: 14,
+		parNumber: 4
+	},
+	{
+		holeNumber: 15,
+		parNumber: 4
+	},
+	{
+		holeNumber: 16,
+		parNumber: 4
+	},
+	{
+		holeNumber: 17,
+		parNumber: 3
+	},
+	{
+		holeNumber: 18,
+		parNumber: 4
+	}
+]
+
+$(".generate").on("click",function(){
+	var selectBox = $('')
+	for (var i = 0; i < cardHoles.length; i++) {
+		$('.scoreTable > tbody:last-child').append('<tr><td><strong>' + cardHoles[i].holeNumber + '</td><td>' + cardHoles[i].parNumber + '</td>' 
+			+ '<td><select><option value=0 selected="selected">SCORE</option><option value ="' +  selectOptions.options.length + '">'+ selectOptions.options[i] + '</option>	</select></td>');
+
+	};
+	
+})
+
+// // $('#scoreCard').append('<table></table>');
+// // var scoreCard = $('#scoreCard').children();
+// // scoreCard.append("<tr><td>a</td><td>b</td></tr>")
+
+</script>
