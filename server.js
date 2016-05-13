@@ -6,6 +6,10 @@ var express = require ('express');
 var bodyParser = require ('body-parser');
 var connection = require ('./app/config/connection.js');
 var mysql = require('mysql');
+var playerScores = require('./model/playerscores.js') ;
+// sequelize (lowercase) references my connection to the DB. You could name it something else, but I was just following their convention.
+
+
 
 
 
@@ -36,3 +40,12 @@ require("./app/routes/html-routes.js")(app);
 app.listen(PORT, function(){
 	console.log('App listening on PORT ' + PORT);
 })
+
+// check database connection
+// sequelize.authenticate().complete(function(err) {
+//     if (err) {
+//       console.log('Unable to connect to the database:', err);
+//     } else {
+//       console.log('Connection has been established successfully.');
+//     }
+// });
