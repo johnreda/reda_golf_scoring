@@ -7,9 +7,6 @@
 
 module.exports = function(app){
 
-	app.get('/api/')
+	app.get('../public/round1.html');
 
-	app.post('/api'){
-		
-	}
 }
