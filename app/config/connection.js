@@ -21,12 +21,12 @@ var source = {
         host: 'l3855uft9zao23e2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         user: 'vkrp5ow0gipi38ay',
         password: "w00bqn6w3yd0m1cc",
-        database: "lghowl35ljxl5vao" 
+        database: "w1ovnnhmb8geb3ja" 
     }
 }
 
 // Selects a connection (can be changed quickly as needed)
-var selectedSource = source.localhost;
+var selectedSource = source.jawsDB;
 
 // Creates mySQL connection using Sequelize
 var sequelize = new Sequelize(selectedSource.database, selectedSource.user, selectedSource.password, {
