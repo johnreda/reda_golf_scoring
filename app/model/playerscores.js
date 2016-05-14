@@ -34,7 +34,7 @@ var playerScores = sequelize.define("playerSCores", {
 // Syncs with DB
 playerScores.sync({}).then(function () {
   // Table created
-  console.log('classes table done syncing')
+  console.log('player scores table done syncing')
 });
 
 // Makes the classes Model available for other files (will also create a table)

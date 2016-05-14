@@ -34,14 +34,14 @@
 							<th> Hole</th>
 							<th> Par</th>
 							<th> Score</th>
-							<style>
-							th{
-								padding: 10px;
-							}
-							td{
-								padding: 10px;
-							}
-							</style>
+															<style>
+															th{
+																padding: 10px;
+															}
+															td{
+																padding: 10px;
+															}
+															</style>
 						</tr>
 						
 					</tbody>
@@ -65,15 +65,9 @@
 
 <script type="text/javascript">
 
-//
 
 //DYNAMICALLY CREATE SCORECARD
 
-var selectOptions = $('<select>');
-	for (var i = 1; i < 19; i++) {
-		var holeID = selectOptions.id = "hole" + [i];
-		//console.log("Hole ID: " + holeID);
-	};
 
 var cardHoles = [
 	{
@@ -183,6 +177,10 @@ $(".generate").on("click",function(){
 	$(".submit").on("click", function (){
 	
 	var grossArray= [];
+	var scoreObject = {
+		name: "TEST",
+		scores: [0,1]
+	};
 
 
 			//========================================================================================		
@@ -205,6 +203,20 @@ for(var i in grossArray) { grossTotal += grossArray[i]; }
 
 
 
+//SET UP THE AJAX POST REQUEST ===========
+
+var currentURL = window.location.origin;
+
+//AJAX POST THE DATA TO THE API
+	$.post(currentURL + "/api/round1scores", function (data){
+		var scoreObject = {
+			name: "TEST",
+			scores: [0,1]
+		};
+		alert("Your score has posted!")
+	}) 
+
+//scoreObject.scores = grossArray;
 
 
 </script>
