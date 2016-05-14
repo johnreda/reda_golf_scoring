@@ -174,49 +174,48 @@ $(".generate").on("click",function(){
 
 });
 
-	$(".submit").on("click", function (){
-	
+$(".submit").on("click", function (){
+
 	var grossArray= [];
-	var scoreObject = {
-		name: "TEST",
-		scores: [0,1]
+
+	for (var i = 1; i < 19; i++) {
+		var scoreID = "hole" + i;
+		var holeScore = parseInt($("#" + scoreID + " option:selected").val());
+		grossArray.push(holeScore);
 	};
 
+	var grossTotal=0;
+	for(var i in grossArray) { 
+		grossTotal += grossArray[i]; 
+	}
 
-			//========================================================================================		
-					for (var i = 1; i < 19; i++) {
-							var scoreID = "hole" + i;
-							var holeScore = parseInt($("#" + scoreID + " option:selected").val());
-							grossArray.push(holeScore);
-							
-
-						};
-			//========================================================================================
-
-
-var grossTotal=0;
-for(var i in grossArray) { grossTotal += grossArray[i]; }
 	alert("Your Gross Score is: " + grossTotal);
+
+
+	var scoreObject = {
+		name: "TEST",
+		scores: [0,0],
+		total: 0,
+	};
+	scoreObject.scores = grossArray;
+	scoreObject.total = grossTotal;
+
+	//SET UP THE AJAX POST REQUEST ===========
+
+	var currentURL = window.location.origin;
+	console.log(currentURL);
+
+	//AJAX POST THE DATA TO THE API
+		$.post(currentURL + "/api/round1scores", scoreObject, function (data){
+			alert("Your score has posted!")
+		}) 
+
+	//scoreObject.scores = grossArray;
 
 
 });
 
 
-
-//SET UP THE AJAX POST REQUEST ===========
-
-var currentURL = window.location.origin;
-
-//AJAX POST THE DATA TO THE API
-	$.post(currentURL + "/api/round1scores", function (data){
-		var scoreObject = {
-			name: "TEST",
-			scores: [0,1]
-		};
-		alert("Your score has posted!")
-	}) 
-
-//scoreObject.scores = grossArray;
 
 
 </script>
