@@ -15,10 +15,14 @@ module.exports = function(app) {
 	//HOME
 	app.get('/', function (req,res){
 		res.sendFile(path.join(__dirname + '/../public/index.html'));
+
+
 	});
 
 	app.get('/round1', function (req,res){
 		res.sendFile(path.join(__dirname + '/../public/round1.html'))
+
+		
 	});
 
 	app.get('/round2', function (req,res){
